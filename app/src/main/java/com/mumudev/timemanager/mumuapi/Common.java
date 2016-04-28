@@ -7,7 +7,7 @@ import com.mumudev.timemanager.beans.RegisterInfo;
 import com.mumudev.timemanager.beans.ResultDataInfo;
 import com.mumudev.timemanager.util.GsonUtil;
 import com.mumudev.timemanager.volley.GsonRequest.OnRespnoseListener;
-import com.mumudev.timemanager.volley.VolleyHelper2;
+import com.mumudev.timemanager.volley.VolleyHelper;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -63,7 +63,7 @@ public class Common {
     private static <T> void post(final String partUrl,
                                  Map<String, String> params, OnRespnoseListener<T> listener,
                                  final TypeToken<ResultDataInfo<T>> token) {
-        VolleyHelper2.post(getAbsoluteUrl(partUrl), params, listener, token);
+        VolleyHelper.post(getAbsoluteUrl(partUrl), params, listener, token);
     }
 
     /**

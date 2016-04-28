@@ -118,7 +118,6 @@ public class GsonRequest<T> extends Request<ResultDataInfo<T>> {
             String jsonString = new String(response.data,
                     HttpHeaderParser.parseCharset(response.headers));
             ResultDataInfo<T> result = sGson.fromJson(jsonString, mType);
-            // MKLog.i(TAG, result.toString());
 
             return Response.success(result,
                     HttpHeaderParser.parseCacheHeaders(response));
