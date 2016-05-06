@@ -1,5 +1,7 @@
 package com.mumudev.timemanager.activity;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -63,11 +65,16 @@ public class CourseActivity extends AppCompatActivity
 
     public List<Map<String, Object>> getData(){
         List<Map<String, Object>> list= new ArrayList<>();
+//        //返回STRING_KEY的值
+//        Log.d("SP", sp.getString("STRING_KEY", "none"));
+//        //如果NOT_EXIST不存在，则返回值为"none"
+//        Log.d("SP", sp.getString("NOT_EXIST", "none"));
         for (int i = 0; i < 10; i++) {
             Map<String, Object> map= new HashMap<>();
-            map.put("image", R.drawable.ic_launcher);
-            map.put("title", "这是一个标题"+i);
-            map.put("info", "这是一个详细信息"+i);
+            map.put("course_name","course_name"+i );
+            map.put("teacher", "teacher"+i);
+            map.put("course_time", "course_time"+i);
+            map.put("classroom", "classroom"+i);
             list.add(map);
         }
         return list;
@@ -111,17 +118,11 @@ public class CourseActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_camera) {
-            // Handle the camera action
-        } else if (id == R.id.nav_gallery) {
+        if (id == R.id.nav_settings) {
 
-        } else if (id == R.id.nav_slideshow) {
+        } else if (id == R.id.nav_course) {
 
-        } else if (id == R.id.nav_manage) {
-
-        } else if (id == R.id.nav_share) {
-
-        } else if (id == R.id.nav_send) {
+        } else if (id == R.id.nav_category) {
 
         }
 
